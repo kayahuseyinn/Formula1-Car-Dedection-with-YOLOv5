@@ -31,3 +31,40 @@ Eğitim-test ayrımı yaparken hem görüntüler için hem de etiket dosyaları 
 Ben eğitim-test ayrımını elle yaparak farklı sahnelerdeki tüm ihtimallerin göz önünde aynı derecede bulunmasını sağlamaya çalıştım. 900'a yakın görüntüyü eğitim için 100'e yakın görüntüyü de test için ayırdı. En sonunda algoritmayı uygulamak adına dosya formatını ayarladım.
 
 Kullandığım veri setimin son hali: [Formula1 Veri Seti](https://github.com/kayahuseyinn/Formula1-Car-Dedection-with-YOLOv5/tree/master/Formula1Dataset)
+
+### Yolov5 kullanarak modelimizi eğitmek
+Yolov5 reposunu klonluyoruz.
+
+`$ git clone https://github.com/ultralytics/yolov5.git`
+
+Gereksinimleri kuruyoruz.
+
+`$ cd yolov5`
+
+`$ pip install -r requirements.txt`
+
+custom.yaml dosyası oluşturuyoruz. Bu dosya algoritmanın veri setimizin kaynağını bulurken kullandığı dosya olacak.
+
+<pre>
+train: ../Formula1Dataset/images/train/
+val: ../Formula1Dataset/images/val/
+nc: 1
+names: ['Formula1 Car']</pre>
+
+Yukarıda içeriği verilen custom.yaml dosyası veri setimizde eğitim ve test bölümlerini algoritmaya tanıtmaya yarıyor, "nc" kaç adet nesnenin tespit edileceğini, "names" ise bu nesnelerin adını belirtiyor. Bu dosyayı klonladığımız /yolov5 klasörüne atıyoruz.
+
+Artık eğitim için hazır durumdayız. Aşağıdaki komutla modelimizi oluşturmaya başlayabiliriz.
+
+`$ python train.py --img 640 --batch 16 --epochs 300 --data custom.yaml --weights yolov5s.pt --cache`
+
+epochs: Epoch(döngü) sayısı, eğitim sırasında tüm eğitim verilerinin ağa gösterilme sayısıdır. Eğitimin doğruluğu arttığında bile, validation(doğrulama) doğruluğu azalmaya başlayana kadar epoch sayısını artırın. Doğruluğun en yüksek olduğu yerde epoch sayınız idealdir.
+
+
+batch: parametre güncellemesinin gerçekleştiği ağa verilen alt örneklerin sayısıdır. Toplu boyut için iyi bir varsayılan değer 16 olabilir. Ayrıca 32, 64, 128, 256 ve benzeri değerleri de deneyin.
+
+weights: Eğitimde kullanmak istediğimiz ağırlığı belirtiyor. [YoloV5](https://github.com/ultralytics/yolov5) Buradan farklı ağırlıkların başarım kıyaslamasını inceleyebilirsiniz.
+
+### Modelimizi video üzerinden test etmek
+Eğitim aşaması bittikten sonra /yolov5 klasöründe "/runs/train/exp" dizininde modelimizin ağırlıklarını (best.pt, last.pt) ve modelimizin farklı ölçütlere göre başarım oranını bulabilirsiniz. 
+
+Kendi çalışmamdaki model ve başarım oranları: 
