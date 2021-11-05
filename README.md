@@ -79,4 +79,12 @@ Bunun için aşağıdaki komutu kullanırız:
 Videonun işlenmiş halini /yolo klasörünün 'run/detect/exp' dizininde bulabilirsiniz.
 
 ## Kullanım
+ 1) Yolov5 reposunu klonla.
+ 
 `$ git clone https://github.com/ultralytics/yolov5.git`
+
+ 2) Bu repoyu klonla.
+ 
+`$ git clone https://github.com/kayahuseyinn/Formula1-Car-Dedection-with-YOLOv5.git`
+
+
