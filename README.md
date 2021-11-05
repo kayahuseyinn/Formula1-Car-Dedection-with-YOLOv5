@@ -85,6 +85,29 @@ Videonun işlenmiş halini /yolo klasörünün 'run/detect/exp' dizininde bulabi
 
  2) Bu repoyu klonla.
  
-`$ git clone https://github.com/kayahuseyinn/Formula1-Car-Dedection-with-YOLOv5.git`
+`$ git clone -b master https://github.com/kayahuseyinn/Formula1-Car-Dedection-with-YOLOv5.git`
 
- 3) /Formula1-Car-Dedection-with-YOLOv5 klasöründeki "Formula1Dataset" klasörünü ve custom.yaml dosyasını /yolov5 klasörüne taşı.
+ 3) "Formula1Dataset" klasörünü ve custom.yaml dosyasını /yolov5 klasörüne taşı.
+ 
+ `$ cd Formula1-Car-Dedection-with-YOLOv5`
+ 
+ `$ mv Fomula1Dataset ../yolov5`
+ 
+ `$ mv custom.yaml ../yolov5`
+ 
+ 4) /yolov5 dizininde eğitimi başlat.
+ 
+ `$ cd ../yolov5`
+ 
+ `$ python train.py --img 640 --batch 16 --epochs 300 --data custom.yaml --weights yolov5s.pt --cache`
+ 
+ 5) Video üzerinde test et.
+
+ `$ python detect.py --weights best.pt --img 640 --conf 0.25 --source test.mp4`
+
+# Kaynaklar
+ - https://devhunteryz.wordpress.com/2018/08/27/yapay-sinir-aglarindaki-hiperparametreler/
+ - https://github.com/ultralytics/yolov5
+
+
+
