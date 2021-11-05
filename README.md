@@ -30,5 +30,4 @@ Eğitim-test ayrımı yaparken hem görüntüler için hem de etiket dosyaları 
 
 Ben eğitim-test ayrımını elle yaparak farklı sahnelerdeki tüm ihtimallerin göz önünde aynı derecede bulunmasını sağlamaya çalıştım. 900'a yakın görüntüyü eğitim için 100'e yakın görüntüyü de test için ayırdı. En sonunda algoritmayı uygulamak adına dosya formatını ayarladım.
 
-Kullandığım veri setimin son hali: 
-
+Kullandığım veri setimin son hali: [Formula1 Veri Seti](https://github.com/kayahuseyinn/Formula1-Car-Dedection-with-YOLOv5/tree/master/Formula1Dataset)
