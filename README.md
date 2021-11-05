@@ -21,7 +21,7 @@ Sonrasında elimde bulunan videolardan, .jpg formatında görüntüler elde etme
 
 ### Kendi veri setimizi etiketlemek ve algoritmaya uygun formata getirmek
 Nesne tespiti algoritmalarıyla model geliştirebilmek için elimizdeki verileri etiketlememiz gerekir. Ben bu aşamada LabelImg aracını kullandım. 
-![](https://github.com/kayahuseyinn/Formula1-Car-Dedection-with-YOLOv5/blob/main/images/LabelImg.png)
+![](https://github.com/kayahuseyinn/Formula1-Car-Dedection-with-YOLOv5/blob/master/images/LabelImg.png)
 LabelImg, sade ve kullanışlı bir arayüzü bulunan bir etiketleme aracıdır. 
 
 LabelImg'ta etiketlenen her görüntü için aynı görüntüye ait etiketlenen pixel koordinatlarının bulunduğu birer .txt dosyası oluşur. Buna etiket dosyaları demek yanlış olmaz diye düşünüyorum. Örneğin, "Formula1_1.jpg" dosyasını etiketledikten ve kaydettikten sonra "Formula1_1.txt" dosyası oluşur.
