@@ -87,4 +87,4 @@ Videonun işlenmiş halini /yolo klasörünün 'run/detect/exp' dizininde bulabi
  
 `$ git clone https://github.com/kayahuseyinn/Formula1-Car-Dedection-with-YOLOv5.git`
 
-
+ 3) /Formula1-Car-Dedection-with-YOLOv5 klasöründeki "Formula1Dataset" klasörünü ve custom.yaml dosyasını /yolov5 klasörüne taşı.
