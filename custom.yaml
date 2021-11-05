@@ -1,0 +1,4 @@
+train: ../Formula1Dataset/images/train/
+val: ../Formula1Dataset/images/val/
+nc: 1
+names: ['Formula1 Car']
