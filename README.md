@@ -72,6 +72,7 @@ Kendi çalışmamdaki model ve başarım oranları: [Model](https://github.com/k
 Artık kendi modelimizi videolar üzerinde kullanıp, test edebiliriz.
 
 Bunun için aşağıdaki komutu kullanırız:
+
 `$ python detect.py --weights best.pt --img 640 --conf 0.25 --source test.mp4`
 
 --source kısmına testi yapmak istediğiniz videonun dosya yolunu koymalısınız.
