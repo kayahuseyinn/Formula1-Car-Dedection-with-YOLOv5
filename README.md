@@ -67,4 +67,16 @@ weights: Eğitimde kullanmak istediğimiz ağırlığı belirtiyor. [YoloV5](htt
 ### Modelimizi video üzerinden test etmek
 Eğitim aşaması bittikten sonra /yolov5 klasöründe "/runs/train/exp" dizininde modelimizin ağırlıklarını (best.pt, last.pt) ve modelimizin farklı ölçütlere göre başarım oranını bulabilirsiniz. 
 
-Kendi çalışmamdaki model ve başarım oranları: 
+Kendi çalışmamdaki model ve başarım oranları: [Model](https://github.com/kayahuseyinn/Formula1-Car-Dedection-with-YOLOv5/tree/master/Model)
+
+Artık kendi modelimizi videolar üzerinde kullanıp, test edebiliriz.
+
+Bunun için aşağıdaki komutu kullanırız:
+`$ python detect.py --weights best.pt --img 640 --conf 0.25 --source test.mp4`
+
+--source kısmına testi yapmak istediğiniz videonun dosya yolunu koymalısınız.
+
+Videonun işlenmiş halini /yolo klasörünün 'run/detect/exp' dizininde bulabilirsiniz.
+
+## Kullanım
+`$ git clone https://github.com/ultralytics/yolov5.git`
